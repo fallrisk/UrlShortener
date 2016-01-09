@@ -33,8 +33,9 @@ exports.getShortUrl = function(originalUrl){
 	while (currentShortUrls.indexOf(shortUrl) > -1) {
 		shortUrl = getRandomCharSeq(4)
 	}
-	var newItem = {original_url: originalUrl, short_url: _hostUrl + shortUrl}
+	var newItem = {original_url: originalUrl, short_url: shortUrl}
 	_urls.push(newItem)
+	newItem.shortUrl = _hostUrl + shortUrl
 	return newItem
 }
 
