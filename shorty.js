@@ -35,8 +35,7 @@ exports.getShortUrl = function(originalUrl){
 	}
 	var newItem = {original_url: originalUrl, short_url: shortUrl}
 	_urls.push(newItem)
-	newItem.short_url = _hostUrl + shortUrl
-	return newItem
+	return {original_url: originalUrl, short_url: _hostUrl + shortUrl}
 }
 
 // Saves the JSON database to a file.
