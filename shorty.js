@@ -105,6 +105,12 @@ exports.deleteShortUrl = function(shortUrl){
 	return false
 }
 
+// http://blog.mattheworiordan.com/post/13174566389/url-regular-expression-for-links-with-or-without
+exports.isValidWebUrl = (url) => {
+	var regx = /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+|(?:www\.|[\-;:&=\+\$,\w]+@)[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-_]*)?\??(?:[\-\+=&;%@\.\w_]*)#?(?:[\.\!\/\\\w]*))?)/
+	return url.match(regx) !== null
+}
+
 // Clears the database of URLs.
 exports.empty = () => {
 	_urls = []

@@ -15,6 +15,7 @@ describe("Shorty", function(){
     shorty.isValidShortUrl(s.short_url).should.equal(false)
     done()
   })
+
   it("should save the data and retrieve it", (done) => {
     shorty.empty()
     shorty.saveDb().then(()=>{
@@ -28,5 +29,19 @@ describe("Shorty", function(){
         })
       })
     })
+  })
+
+  it("should validate that the provided URL is a valid web URL", (done) => {
+    var url1 = "http://www.freecodecamp.com"
+    var url2 = "www.freecodecamp.com"
+    var url3 = "freecodecamp.com"
+    var url4 = "freecodecamp"
+    var url5 = "http://freecodecamp.com"
+    shorty.isValidWebUrl(url1).should.equal(true)
+    shorty.isValidWebUrl(url2).should.equal(true)
+    shorty.isValidWebUrl(url3).should.equal(false)
+    shorty.isValidWebUrl(url4).should.equal(false)
+    shorty.isValidWebUrl(url5).should.equal(true)
+    done()
   })
 })

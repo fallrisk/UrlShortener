@@ -10,7 +10,7 @@
 * User Story: When I visit that shortened URL, it will redirect me to my original link.
 
 ## Example
-1. Create a short URL by sending a request [https://glacial-taiga-5871.herokuapp.com//new/http://www.freecodecamp.com]
+1. Create a short URL by sending a request [https://glacial-taiga-5871.herokuapp.com/new/http://www.freecodecamp.com]
 2. The response will be something similar to the follow JSON.
 ```json
 { "original_url": "http://freecodecamp.com/news", "short_url": "https://glacial-taiga-5871.herokuapp.com/abcd" }

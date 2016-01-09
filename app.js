@@ -35,6 +35,10 @@ router.get(/\/new\/(.*)/, function(req, res, next){
   // console.log("here " + req.params[0])
   // res.status(200).send(req.params[0])
   var originalUrl = req.params[0]
+  if (!shorty.isValidWebUrl(originalUrl)) {
+    res.status(200).json({error: "Not a valid Web URL."})
+    return
+  }
   var s = shorty.getShortUrl(originalUrl)
   console.log(s)
   res.status(200).json(s)
