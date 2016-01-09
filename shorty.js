@@ -17,6 +17,8 @@ var _dbFilename = "url.json"
 // {original_url: "", short_url: ""}
 var _urls = []
 
+var _hostUrl = process.env.SHORTY_HOST_URL || ""
+
 // Takes a given url and creates a new short URL. Ensures that the ID is
 // available.
 exports.getShortUrl = function(originalUrl){
@@ -31,7 +33,7 @@ exports.getShortUrl = function(originalUrl){
 	while (currentShortUrls.indexOf(shortUrl) > -1) {
 		shortUrl = getRandomCharSeq(4)
 	}
-	var newItem = {original_url: originalUrl, short_url: shortUrl}
+	var newItem = {original_url: originalUrl, short_url: _hostUrl + shortUrl}
 	_urls.push(newItem)
 	return newItem
 }
