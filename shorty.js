@@ -35,7 +35,7 @@ exports.getShortUrl = function(originalUrl){
 	}
 	var newItem = {original_url: originalUrl, short_url: shortUrl}
 	_urls.push(newItem)
-	newItem.shortUrl = _hostUrl + shortUrl
+	newItem.short_url = _hostUrl + shortUrl
 	return newItem
 }
 
